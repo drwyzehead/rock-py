@@ -1,0 +1,15 @@
+image: python:alpine
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+  - docker build -t pyapp .
+
+test1:
+  stage: test
+  script:
+    - docker run -t -i --rm pyapp
